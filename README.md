@@ -8,6 +8,7 @@
 - The python dependencies are inside a file called `requirements.txt` which is located in the root directory of the repository
 - Navigate to a directory where you want the virtual environment folder to live (You can keep it on your desktop if you like)
 - To create the virtual environment open cmd and type
+  
     ```
     python -m venv quizapp-environment
     ```
