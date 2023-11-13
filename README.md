@@ -28,7 +28,7 @@
     ```
 
 
-2. Now that the virtual environment created, navigate to the repository where the `requirements.txt` file is located and run the command:
+2. Now that the virtual environment is activated, navigate to the repository where the `requirements.txt` file is located and run the command:
    ```
    pip install -r requirements.txt
    ```
