@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data retrieval from backend</title>
+    <link rel="stylesheet" href="{% static 'testcss/bootstrap.min.css' %}">
+    <style>
+        @font-face {
+            font-family: 'Poppins-medium';
+            src: url("{% static 'fonts/Poppins-Medium.ttf' %}");
+        }
+
+        @media(min-width:768px){
+            #root{
+                width:75%; 
+            }
+        }
+
+        ul{
+            list-style:upper-alpha;
+        }
+
+        body{
+            font-family: 'Poppins-medium';
+            background-color:lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="mx-auto mt-4 p-2">
+        
+    </div>
+    <script>
+        const populate = (data) => {
+            for(let question of data){
+               let htmlContent = `
+                <div class="card border-0 m-2">
+                    <div class="card-header fw-bold">${question.subject} Question (${question.year})</div>
+                    <div class="card-body">
+                        <p>${question.number}. ${question.content}</p>
+                        <ul>
+                            <li>${question.options[0]}</li>
+                            <li>${question.options[1]}</li>
+                            <li>${question.options[2]}</li>
+                            <li>${question.options[3]}</li>
+                        </ul>
+                    </div>
+                </div>
+                `; 
+
+                document.getElementById('root').insertAdjacentHTML('beforeend', htmlContent);
+            }
+        };
+
+        fetch("/get-questions/").then(
+        response=>response.json()
+        ).then(data=>populate(data))
+    </script>
+</body>
+</html>
