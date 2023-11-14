@@ -28,11 +28,21 @@
     ```
 
 
-2. Now that the virtual environment created, navigate to the repository where the `requirements.txt` file is located and run the command:
+2. Now that the virtual environment is activated, navigate to the repository where the `requirements.txt` file is located and run the command:
    ```
    pip install -r requirements.txt
    ```
    This will install all the dependencies for the project
+
+# File structure
+- Django (our backend technology) just like other frameworks has a file structure we need to follow.
+- All Html files should be placed inside the `templates` directory. From the root directory the path is `core/templates`
+- Now static files (images, javascript, css and other stuff you link to your html) should be placed inside the `static` directory. From the root directory the path is `core/static`.
+- Quick note: javascript inside the html is allowed if you find it necessary to do so.
+- Now you may want to organize your html and css files into folders and you can do that as long as all those folders are inside the required directories (`templates` and `static`).
+- Why do we need to do this ? First of all it is necessary so that data can be passed to the html documents from the backend. Second, the backend needs that to be able to process the static files.
+- When we get the point where we need to use the Django server to run the html pages you'll see how it works. But for the mean time you can run the html files without the Django server
+  while maintaining the appropriate directories
    
 
    
