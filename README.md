@@ -77,6 +77,44 @@
   Quit the server with CTRL-BREAK.
   ```
 - Exit the terminal. 
+
+# Rendering an html page
+- Html pages need to be rendered so that they can be linked to certain urls
+- For example doing something like `http://127.0.0.1:8000/index` can lead to the `index.html` page of the website, `http://127.0.0.1:8000/profile` can lead to the `profile.html` page of the website and so on.
+- Now the constraint we will be facing is that you guys will not be able to render the pages yourselves as this requires you to write some python code in multiple files.
+- So the approach we will adopt is that, if you have started working on a page you should tell me so that I link it for you so that you can render it with the server
+
+# Linking static files
+- As I explained earlier to satisfy some Django requirements we need to put our static files in a directory called static
+- I am going to explain how you are going to write paths to your static files
+- Normally if you want to link say a css file you would do something like this:
+
+  ```html
+  <link rel="stylesheet" href="./file_path/style.css">
+  ```
+- But in django you are going to write the link a little differently. In django `./file_path/style.css ` must be written as `{% static './file_path/style.css' %}`. It will look something like this:
+
+   ```html
+  <link rel="stylesheet" href="{% static './file_path/style.css' %}">
+  ```
+- I must point out that the path you are going to write using the django syntax is going to start from the `static` directory. What I mean is if you have a css file say `style.css` in the
+  static directory you would just write:
+
+  ```html
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  ```
+- So as you may have guess the syntax is just telling django to look inside the `static` directory for  `style.css`.
+- This applies to javascript files as well as image
+
+  ```html
+  <!--linking a js file-->
+  <script src="{% static 'script.js' %}"></script>
+
+  <!--linking an image file-->
+  <img src="{% static 'image.png' %}">
+  ```
+- Anything you want to link you just need to use that syntax
+- Now as that syntax is not regular html it won't work if you are not running the server because once the server renders the html page it no longer becomes pure html but something called `Django template language`.
   
 
    
