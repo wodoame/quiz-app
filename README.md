@@ -103,8 +103,8 @@
   ```html
   <link rel="stylesheet" href="{% static 'style.css' %}">
   ```
-- So as you may have guess the syntax is just telling django to look inside the `static` directory for  `style.css`.
-- This applies to javascript files as well as image
+- So as you may have guessed the syntax is just telling django to look inside the `static` directory for  `style.css`.
+- This applies to javascript files as well as image files . 
 
   ```html
   <!--linking a js file-->
