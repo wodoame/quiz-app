@@ -85,7 +85,7 @@
 - So the approach we will adopt is that, if you have started working on a page you should tell me so that I link it for you so that you can render it with the server
 
 # Linking static files
-- As I explained earlier to satisfy some Django requirements we need to put our static files in a directory called static
+- As I explained earlier, to satisfy some Django requirements we need to put our static files in a directory called static
 - I am going to explain how you are going to write paths to your static files
 - Normally if you want to link say a css file you would do something like this:
 
