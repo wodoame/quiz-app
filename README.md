@@ -115,7 +115,20 @@
   ```
 - Anything you want to link you just need to use that syntax
 - Now as that syntax is not regular html it won't work if you are not running the server because once the server renders the html page it no longer becomes pure html but something called `Django template language`.
-  
+- One last thing you must include `{% load static %}` inside your html and I think a suitable place will be just below the `<!DOCTYPE html>` tag. Here is an example of what I mean
+
+  ```html
+  <!DOCTYPE html>
+  {% load static %}
+  <html lang="en">
+  <!---
+    .
+    .
+    .
+    more html
+  ->
+  ```
+- What this does is to allow the server serve the static files.
 
    
   
