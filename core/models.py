@@ -23,17 +23,11 @@ class Question(models.Model):
         return self.year + ' ' + self.subject + ' ' + self.question_format
     
 class Objective(Question): 
-    answers = (
-        ('A', 'A'),
-        ('B', 'B'),
-        ('C', 'C'),
-        ('D', 'D'),
-    )
     option_a = models.CharField(max_length=128)
     option_b = models.CharField(max_length=128)
     option_c = models.CharField(max_length=128)
     option_d = models.CharField(max_length=128)
-    answer = models.CharField(choices=answers, max_length=1)
+    answer = models.CharField(max_length=128)
     
     def getOptions(self): 
         return [self.option_a, self.option_b, self.option_c, self.option_d]
