@@ -39,7 +39,7 @@
                 <div class="card border-0 m-2">
                     <div class="card-header fw-bold">${question.subject} Question (${question.year})</div>
                     <div class="card-body">
-                        <p>${question.number}. ${question.content}</p>
+                        <p><span class="question-number"></span>. ${question.content}</p>
                         <ul>
                             <li>${question.options[0]}</li>
                             <li>${question.options[1]}</li>
@@ -52,6 +52,9 @@
 
                 document.getElementById('root').insertAdjacentHTML('beforeend', htmlContent);
             }
+
+            const questionNumbers = document.querySelectorAll('.question-number');
+            questionNumbers.forEach((span, index)=>{span.innerHTML = index + 1});
         };
 
         fetch("/get-questions/").then(

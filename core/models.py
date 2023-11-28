@@ -29,6 +29,9 @@ class Objective(Question):
     option_d = models.CharField(max_length=128)
     answer = models.CharField(max_length=128)
     
+    class Meta: 
+        ordering = ['year']
+    
     def getOptions(self): 
         return [self.option_a, self.option_b, self.option_c, self.option_d]
     
