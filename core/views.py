@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from .models import Objective
 from django.db.models import Q
 import json
-from .dataset_1 import dataset as dataset_1
+from .dataset_3 import dataset as dataset_3
 
 # Pages
 
@@ -25,7 +25,7 @@ def getQuestions(request):
 
 def createData(request):
     createdData = []
-    for i, data in enumerate(dataset_1, start=1): 
+    for i, data in enumerate(dataset_3, start=1): 
         objectiveQuestion = Objective.objects.create(
             year=data.get('year'), 
             instruction=data.get('instruction'),
